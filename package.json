@@ -1,0 +1,40 @@
+{
+  "name": "my-web-project",
+  "version": "1.0.0",
+  "description": "A modern web application template",
+  "main": "index.html",
+  "scripts": {
+    "start": "http-server -p 3000",
+    "build": "node build/build.js",
+    "clean": "rimraf dist",
+    "lint": "eslint assets/js/*.js",
+    "optimize-images": "imagemin assets/images/* --out-dir=dist/assets/images",
+    "postinstall": "node -e \"console.log('\\n\\x1b[32m✓ Installation complete!\\x1b[0m\\n\\nTo start the development server:\\n\\x1b[36mnpm start\\x1b[0m\\n\\nTo build for production:\\n\\x1b[36mnpm run build\\x1b[0m\\n')\"",
+    "setup": "node tools/setup.js",
+    "deploy": "npm run build && gh-pages -d dist",
+    "predeploy": "npm run clean",
+    "gh-pages": "gh-pages -d dist -b gh-pages",
+    "autopub": "node tools/autopub.js"
+  },
+  "keywords": [
+    "web",
+    "html",
+    "css",
+    "javascript"
+  ],
+  "author": "Sam",
+  "license": "MIT",
+  "devDependencies": {
+    "clean-css": "^5.3.2",
+    "copyfiles": "^2.4.1",
+    "eslint": "^8.50.0",
+    "fs-extra": "^11.1.1",
+    "html-minifier": "^4.0.0",
+    "http-server": "^14.1.1",
+    "imagemin": "^8.0.1",
+    "rimraf": "^5.0.1",
+    "terser": "^5.20.0",
+    "gh-pages": "^5.0.0"
+  },
+  "homepage": "https://modsias.github.io/my-web-project"
+}

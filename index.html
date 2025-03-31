@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A modern web project template with responsive design and interactive features">
+    <meta name="keywords" content="web development, HTML, CSS, JavaScript, responsive design">
+    <meta name="author" content="Your Name">
+    <meta name="organization" content="modsias">
+    <meta name="developer" content="idl3o">
+    <title>MODS™ Web Project</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="assets/js/config-loader.js" defer></script>
+    <script src="assets/js/resource-loader.js" defer></script>
+    <script src="assets/js/w3s-connector.js" defer></script>
+    
+    <!-- GitHub Pages base path - comment this out for local development -->
+    <base href="/my-web-project/">
+
+    <style>
+        #loading-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+        
+        .spinner {
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            border-left-color: #29ABE2;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="loading-indicator">
+        <div class="spinner"></div>
+    </div>
+    <header>
+        <h1>Welcome to MODS™ Web Project</h1>
+        <div class="org-badge">
+            <span class="org-name">modsias</span> | <span class="dev-id">idl3o</span>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#resources">Resources</a></li>
+            </ul>
+        </nav>
+        <div class="theme-switch">
+            <label class="switch">
+                <input type="checkbox" id="theme-toggle">
+                <span class="slider round"></span>
+            </label>
+            <span>Dark Mode</span>
+        </div>
+    </header>
+    <button id="start-tour" class="button">Take a Tour</button>
+    <main class="container">
+        <section id="introduction">
+            <h2>Introduction</h2>
+            <p>This is a sample web project demonstrating the structure and usage of HTML, CSS, and JavaScript.</p>
+            <p>Last updated: <span id="last-updated"></span></p>
+            <p>API Version: <span class="api-version"></span></p>
+            <p><a href="INSTALL.md" class="button">Installation Guide</a></p>
+            <p>
+                <a href="terms.html" class="button">Terms of Service</a>
+                <a href="privacy.html" class="button">Privacy Policy</a>
+            </p>
+            <p>
+                <button onclick="runAutopub()" class="button">Autopublish</button>
+            </p>
+        </section>
+        <section id="features">
+            <h2>Features</h2>
+            <ul>
+                <li>Responsive design</li>
+                <li>Dynamic content loading</li>
+                <li>Interactive elements</li>
+                <li>Dark mode support</li>
+                <li>SEO optimization</li>
+            </ul>
+        </section>
+        <section id="modern-tech">
+            <h2>Modern Technologies</h2>
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <i class="fab fa-html5 fa-3x"></i>
+                    <p>HTML5</p>
+                </div>
+                <div class="tech-item">
+                    <i class="fab fa-css3-alt fa-3x"></i>
+                    <p>CSS3</p>
+                </div>
+                <div class="tech-item">
+                    <i class="fab fa-js fa-3x"></i>
+                    <p>JavaScript</p>
+                </div>
+                <div class="tech-item">
+                    <i class="fas fa-mobile-alt fa-3x"></i>
+                    <p>Responsive</p>
+                </div>
+            </div>
+        </section>
+        <section id="organization">
+            <h2>Organization Information</h2>
+            <div class="org-info">
+                <p>This project is maintained by <strong class="org-name">modsias</strong> under the Intelligent Analysis License.</p>
+                <p>Development ID: <code class="dev-id">idl3o</code></p>
+                <p>Credentials: <span class="cred-type">GitHub</span></p>
+                <div class="license-badge">
+                    <i class="fas fa-certificate"></i> IA Licensed
+                </div>
+                <p class="deployment-info">
+                    This project is automatically deployed to 
+                    <a href="https://modsias.github.io/my-web-project" target="_blank">GitHub Pages</a>.
+                </p>
+            </div>
+        </section>
+        <section id="resources">
+            <h2>External Resources</h2>
+            <div class="resource-buttons">
+                <button id="search-w3s" class="button">
+                    <i class="fas fa-search"></i> Find W3Schools Examples
+                </button>
+                <button id="import-resources" class="button">
+                    <i class="fas fa-file-import"></i> Import Local Resources
+                </button>
+            </div>
+            <div id="resource-results" class="resource-container">
+                <p>Click the buttons above to search for resources.</p>
+            </div>
+        </section>
+        <section id="contact">
+            <h2>Connect With Us</h2>
+            <div class="social-links">
+                <a href="https://twitter.com/idl30" class="social-icon" title="Follow @idl30 on Twitter" data-social="twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://github.com/modsias" class="social-icon" title="View MODSIAS on GitHub" data-social="github"><i class="fab fa-github"></i></a>
+                <a href="#" class="social-icon" title="Connect on Webby" data-social="webby"><i class="fas fa-globe"></i></a>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <p>&copy; <span id="current-year"></span> My Web Project | <span class="org-name">modsias</span></p>
+        <p>
+            <a href="https://github.com/modsias/my-web-project" class="social-icon" title="View on GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+            Licensed under IA
+        </p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('loading-indicator').style.display = 'none';
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('start-tour').addEventListener('click', function() {
+                window.tourGuide.start();
+            });
+        });
+
+        function runAutopub() {
+            window.location.href = 'autopub.html';
+        }
+    </script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/tour.js"></script>
+</body>
+</html>

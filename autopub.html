@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autopublish - MODS™ Web Project</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Autopublish</h1>
+    </header>
+    <main class="container">
+        <section>
+            <h2>Autopublish Tool</h2>
+            <p>This tool automates the process of publishing updates to various platforms.</p>
+            <button id="run-autopub" class="button">Run Autopublish</button>
+        </section>
+    </main>
+    <footer class="footer">
+        <p>&copy; 2023 MODS™ Web Project</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('run-autopub').addEventListener('click', function() {
+                // Run autopublish script
+                fetch('tools/autopub.js')
+                    .then(response => response.text())
+                    .then(script => {
+                        eval(script);
+                        runAutopub();
+                    })
+                    .catch(error => console.error('Error running autopub:', error));
+            });
+        });
+    </script>
+</body>
+</html>
